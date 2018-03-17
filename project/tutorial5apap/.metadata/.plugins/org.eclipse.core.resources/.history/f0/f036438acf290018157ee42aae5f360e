@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		
+	</head>
+	
+	<body>
+		<div th:replace="fragments/fragment :: header"></div>
+			<title>Index</title>
+			<h2>Welcome To Tutorial 05 APAP</h2>
+		<div th:replace="fragments/fragment :: footer"></div>
+	</body>
+</html>

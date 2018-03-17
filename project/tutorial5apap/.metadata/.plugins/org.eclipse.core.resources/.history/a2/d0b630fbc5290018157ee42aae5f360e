@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>View All Students</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="/DataTables/datatables.css"/>
+        <script type="text/javascript" charset="utf8" src="/DataTables/dataTables.js"></script>
+        <script>
+     		$(document).ready(function(){
+     			$('table-id').DataTable();
+     		});
+     	</script>
+    </head>
+    <body>
+        <h1>All Students</h1>
+        
+    		<div th:each="student,iterationStatus: ${students}" th:class="${iterationStatus.odd} ? 'odd'">
+            <h3 th:text="'No. ' + ${iterationStatus.count}">No. 1</h3>
+	       	<h3 th:text="'NPM = ' + ${student.getNpm()}">Student NPM</h3>
+	       	<h3 th:text="'Name = ' + ${student.getName()}">Student Name</h3>
+	       	<h3 th:text="'GPA = ' + ${student.getGpa()}">Student GPA</h3>
+	       	<!-- <h3 th:if="${student.getGpa()>=3.49}">Cum Laude!</h3>
+	       	<h3 th:unless="${student.getGpa()>=3.49}">Sangat Memuaskan!</h3> -->
+	       	<h3 th:text="${student.getGpa()>=3.49} ? 'Cum Laude!' : 'Sangat Memuaskan'"></h3>
+	       	<a th:href="'/student/delete/' + ${student.getNpm()}"> Delete Data</a><br></br>
+	       	<a th:href="'/student/update/' + ${student.getNpm()}"> Update Data</a>
+	       	<hr/>
+       	</div>
+     	<table id="table-id" class="display">
+     		<thead>
+     			<tr>
+     				<th>col1</th>
+     				<th>col2</th>
+     			</tr>
+     		</thead>
+     		<tbody>
+     			<tr>
+     				<td>1</td>
+     				<td>2</td>
+     			</tr>
+     			<tr>
+     				<td>1</td>
+     				<td>2</td>
+     			</tr>
+     		</tbody>
+     	</table>
+     	
+    </body>
+</html>

@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title th:fragment="header(title)" th:text="${title}">Title</title>
+		<link rel="stylesheet" href="/css/bootstrap.min.css"/>
+	</head>
+	
+	<body>
+		<div th:fragment="">
+		
+		</div>
+	</body>
+</html>

@@ -1,0 +1,7 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head></head>
+	<body>
+		<title th:fragment="header(title)" th:text="${title}"></title>
+	</body>
+</html>
